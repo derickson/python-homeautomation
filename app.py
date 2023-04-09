@@ -11,6 +11,7 @@ nowiso = datetime.utcnow().isoformat()
 token = os.getenv('HASS_BEARERTOKEN', 'ERROR')
 hass_url = os.getenv('HASS_URL', 'http://localhost:8123')
 url = "{}/api/states".format(hass_url)
+
 headers = {
     "Authorization": "Bearer {}".format(token),
     "content-type": "application/json",
@@ -20,6 +21,9 @@ response = get(url, headers=headers)
 ## Get JSON state objects I'm interested in loaded into a dictionary
 ## do some transformation as well
 rj = response.json()
+
+# print(json.dumps(rj, indent=4))
+
 entitiesToExtract = ["person.dave_3",
                      "sun.sun",
                      "light.officesmartwallswitch",
