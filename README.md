@@ -16,3 +16,14 @@ run the script
 chmod a+x *.sh
 ./run.sh
 ```
+
+
+when using docker
+```
+docker build -t python-homeautomation .
+```
+
+run with 
+```
+docker run --network="host" python-homeautomation
+```
