@@ -1,6 +1,6 @@
 ## for security
-run.sh
 output.json
+scratch.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
