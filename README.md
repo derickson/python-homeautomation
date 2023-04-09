@@ -25,5 +25,10 @@ docker build -t python-homeautomation .
 
 run with 
 ```
-docker run --network="host" python-homeautomation
+docker run --rm --network="host" python-homeautomation
+```
+
+install with crontab -e
+```
+*/5 * * * *  docker run --network="host" python-homeautomation
 ```
