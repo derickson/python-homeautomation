@@ -30,5 +30,5 @@ docker run --rm --network="host" python-homeautomation
 
 install with crontab -e
 ```
-*/5 * * * *  docker run --network="host" python-homeautomation
+*/5 * * * *  docker run --rm --network="host" python-homeautomation
 ```

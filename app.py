@@ -109,7 +109,7 @@ for obj in rj:
             objcopy['entity_id'] = sensorRename[entityid]
         entityMap[objcopy['entity_id']] = objcopy
 
-print(json.dumps(entityMap, indent=4))
+# print(json.dumps(entityMap, indent=4))
 
 # Define the Elasticsearch index name
 index_name = "hass_sensor_events"
