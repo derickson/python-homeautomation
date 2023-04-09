@@ -47,7 +47,18 @@ entitiesToExtract = ["person.dave_3",
                      "weather.home",
                      "light.porchlights",
                      "sensor.ipad_16_battery_level",
-                     "sensor.ipad_16_battery_state"]
+                     "sensor.ipad_16_battery_state",
+                     "binary_sensor.vibrationwasher",
+                     "sensor.humidity_9",  #office
+                     "sensor.temperature_10", #office
+                     "sensor.temperature1", #pressure #office
+                     "sensor.humidity_12", #livingroom
+                     "sensor.temperature_13", #livingroom
+                     "sensor.temperature2", #pressure #livingroom
+                     "sensor.humidity_15", #basementfront
+                     "sensor.temperature_16", #basementfront
+                     "sensor.temperature3" #pressure #basementfront
+                     ]
 numericState = ["number.motion_sensor_duration",
                 "sensor.davephone_distance",
                 "sensor.davephone_floors_ascended",
@@ -55,9 +66,30 @@ numericState = ["number.motion_sensor_duration",
                 "sensor.davephone_steps",
                 "sensor.davephone_average_active_pace",
                 "sensor.davephone_battery_level",
-                "sensor.ipad_16_battery_level"]
+                "sensor.ipad_16_battery_level",
+                "sensor.humidity_9",  #office
+                "sensor.temperature_10", #office
+                "sensor.temperature1", #pressure #office
+                "sensor.humidity_12", #livingroom
+                "sensor.temperature_13", #livingroom
+                "sensor.temperature2", #pressure #livingroom
+                "sensor.humidity_15", #basementfront
+                "sensor.temperature_16", #basementfront
+                "sensor.temperature3" #pressure #basementfront
+                ]
 geoState = ["person.dave_3",
             "device_tracker.davephone"]
+sensorRename = {
+    "sensor.humidity_9":        "sensor.office_humidity",
+    "sensor.temperature_10":    "sensor.office_temp",
+    "sensor.temperature1":      "sensor.office_pressure",
+    "sensor.humidity_12":       "sensor.livingroom_humidity",
+    "sensor.temperature_13":    "sensor.livingroom_temp",
+    "sensor.temperature2":      "sensor.livingroom_pressure",
+    "sensor.humidity_15":       "sensor.basementfront_humidity",
+    "sensor.temperature_16":    "sensor.basementfront_temp",
+    "sensor.temperature3":      "sensor.basementfront_pressure"
+}
 entityMap = {}
 for obj in rj:
     entityid = obj['entity_id']
@@ -73,7 +105,11 @@ for obj in rj:
             objcopy['state_geo'] = [objcopy['attributes']['longitude'], objcopy['attributes']['latitude']]
         ## we don't use the genetic state label
         del objcopy['state']
-        entityMap[entityid] = objcopy
+        if entityid in sensorRename:
+            objcopy['entity_id'] = sensorRename[entityid]
+        entityMap[objcopy['entity_id']] = objcopy
+
+print(json.dumps(entityMap, indent=4))
 
 # Define the Elasticsearch index name
 index_name = "hass_sensor_events"
