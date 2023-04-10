@@ -9,9 +9,9 @@ RUN apt-get update && \
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-COPY *.py /app/.
-COPY *.txt /app/.
-COPY *.sh /app/.
+COPY *.py /app/
+COPY *.txt /app/
+COPY *.sh /app/
 
 # Create a Python virtual environment
 RUN python -m venv env
