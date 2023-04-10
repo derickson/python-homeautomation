@@ -117,45 +117,46 @@ for obj in rj:
 # print(json.dumps(entityMap, indent=4))
 
 # Define the Elasticsearch index name
-index_name = "hass_sensor_events"
-es_url = os.getenv('ES_URL', 'https://localhost:9200')
-es_user = os.getenv('ES_USER', 'USER')
-es_password = os.getenv('ES_PASS', 'CHANGEME')
-# Define the Elasticsearch client
-es = Elasticsearch(
-    [es_url],
-    basic_auth=(es_user, es_password),
-    verify_certs=True
-)
+# index_name = "hass_sensor_events"
+# es_url = os.getenv('ES_URL', 'https://localhost:9200')
+# es_user = os.getenv('ES_USER', 'USER')
+# es_password = os.getenv('ES_PASS', 'CHANGEME')
+# # Define the Elasticsearch client
+# es = Elasticsearch(
+#     [es_url],
+#     basic_auth=(es_user, es_password),
+#     verify_certs=True
+# )
 
 # Check the connection by getting the cluster health
 # health = es.cluster.health()
 # print(health)
 
 # Check if the index mapping exists
-if not es.indices.exists(index=index_name):
-    # Define the index mapping
-    index_mapping = {
-        "properties": {
-            "@timestamp": {"type": "date"},
-            "entity_id": {"type": "keyword"},
-            "state_str": {"type": "keyword"},
-            "state_num": {"type": "float"},
-            "state_geo": {"type": "geo_point"},
-            "attributes": {"type": "object"},
-            "last_changed": {"type": "date"},
-            "last_updated": {"type": "date"},
-            "context": {"type": "object"}
-        }
-    }
-    # Create the index with the defined mapping
-    es.indices.create(index=index_name, mappings=index_mapping)
+# if not es.indices.exists(index=index_name):
+#     # Define the index mapping
+#     index_mapping = {
+#         "properties": {
+#             "@timestamp": {"type": "date"},
+#             "entity_id": {"type": "keyword"},
+#             "state_str": {"type": "keyword"},
+#             "state_num": {"type": "float"},
+#             "state_geo": {"type": "geo_point"},
+#             "attributes": {"type": "object"},
+#             "last_changed": {"type": "date"},
+#             "last_updated": {"type": "date"},
+#             "context": {"type": "object"}
+#         }
+#     }
+#     # Create the index with the defined mapping
+#     es.indices.create(index=index_name, mappings=index_mapping)
 
 
 for doc_id in entityMap:
     doc = entityMap[doc_id]
     doc['@timestamp'] = nowiso
-    es.index(index=index_name, document=doc)
+    # es.index(index=index_name, document=doc)
+    print(json.dumps(doc,indent=4))
 
 
 # print(json.dumps(entityMap, indent=4))
