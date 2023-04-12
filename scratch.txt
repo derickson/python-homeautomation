@@ -1,0 +1,20 @@
+export HASS_BEARERTOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI5Y2M1NTAzNzM3NGY0OTMwYjM2NWExYzgwZjU5MDIzYyIsImlhdCI6MTY4MTA1MzI2NywiZXhwIjoxOTk2NDEzMjY3fQ.cUaRp4XCjOkmdp0rV0I2FTTEOKxu-R-XPwFDL26Z90I"
+export HASS_URL="http://nuc:8123"
+export ES_USER="hass"
+export ES_PASS="zkfw3wfVm466"
+export ES_URL="https://nucmonitor.es.us-central1.gcp.cloud.es.io:443"
+
+
+event_type: deconz_event
+data:
+  id: switch_18
+  unique_id: 00:15:8d:00:08:36:be:c5
+  event: 7007
+  device_id: 0eddc6d5bcb47cea5343a6ec41c8ebf8
+  gesture: 1
+origin: LOCAL
+time_fired: "2023-04-09T20:37:41.618795+00:00"
+context:
+  id: 01GXKVT93JVDMFWKF8GYVVA0WH
+  parent_id: null
+  user_id: null
