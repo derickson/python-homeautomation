@@ -25,42 +25,42 @@ rj = response.json()
 # print(json.dumps(rj, indent=4))
 
 entitiesToExtract = ["person.dave_3",
-                     "sun.sun",
-                     "light.officesmartwallswitch",
-                     "binary_sensor.presence_3",
-                     "binary_sensor.water1",
-                     "binary_sensor.water2",
-                     "number.motion_sensor_duration",
-                     "switch.officesmartwallswitch",
-                     "sensor.davephone_activity",
-                     "sensor.davephone_distance",
-                     "sensor.davephone_floors_ascended",
-                     "sensor.davephone_floors_descended",
-                     "sensor.davephone_steps",
-                     "sensor.davephone_average_active_pace",
-                     "sensor.davephone_battery_level",
-                     "sensor.davephone_battery_state",
-                     "sensor.davephone_geocoded_location",
-                     "light.hue_smart_plug_1",
-                     "light.bedroom",
-                     "device_tracker.davephone",
-                     "weather.home",
-                     "light.porchlights",
-                     "sensor.ipad_16_battery_level",
-                     "sensor.ipad_16_battery_state",
-                     "binary_sensor.vibrationwasher",
-                     "sensor.humidity_9",  #office
-                     "sensor.temperature_10", #office
-                     "sensor.temperature1", #pressure #office
-                     "sensor.humidity_12", #livingroom
-                     "sensor.temperature_13", #livingroom
-                     "sensor.temperature2", #pressure #livingroom
-                     "sensor.humidity_15", #basementfront
-                     "sensor.temperature_16", #basementfront
-                     "sensor.temperature3", #pressure #basementfront
-                     "sensor.house_temperature",
-                     "sensor.house_humidity",
-                     "climate.house"
+                    #  "sun.sun",
+                    #  "light.officesmartwallswitch",
+                    #  "binary_sensor.presence_3",
+                    #  "binary_sensor.water1",
+                    #  "binary_sensor.water2",
+                    #  "number.motion_sensor_duration",
+                    #  "switch.officesmartwallswitch",
+                    #  "sensor.davephone_activity",
+                    #  "sensor.davephone_distance",
+                    #  "sensor.davephone_floors_ascended",
+                    #  "sensor.davephone_floors_descended",
+                    #  "sensor.davephone_steps",
+                    #  "sensor.davephone_average_active_pace",
+                    #  "sensor.davephone_battery_level",
+                    #  "sensor.davephone_battery_state",
+                    #  "sensor.davephone_geocoded_location",
+                    #  "light.hue_smart_plug_1",
+                    #  "light.bedroom",
+                    #  "device_tracker.davephone",
+                    #  "weather.home",
+                    #  "light.porchlights",
+                    #  "sensor.ipad_16_battery_level",
+                    #  "sensor.ipad_16_battery_state",
+                    #  "binary_sensor.vibrationwasher",
+                    #  "sensor.humidity_9",  #office
+                    #  "sensor.temperature_10", #office
+                    #  "sensor.temperature1", #pressure #office
+                    #  "sensor.humidity_12", #livingroom
+                    #  "sensor.temperature_13", #livingroom
+                    #  "sensor.temperature2", #pressure #livingroom
+                    #  "sensor.humidity_15", #basementfront
+                    #  "sensor.temperature_16", #basementfront
+                    #  "sensor.temperature3", #pressure #basementfront
+                    #  "sensor.house_temperature",
+                    #  "sensor.house_humidity",
+                    #  "climate.house"
                      ]
 numericState = ["number.motion_sensor_duration",
                 "sensor.davephone_distance",
